@@ -1,0 +1,25 @@
+<body>
+  <div class="wrapper">
+    <div class="app-details">
+      <h1 class="app-title">Currency Converter</h1>
+    </div>
+    <form [formGroup]="form">
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" formControlName="amount" />
+      <div class="drop-down">
+        <select id="from-currency-select" formControlName="fromSelect">
+          <option *ngFor="let currency of currencies" value="{{ currency }}">
+            {{ currency }}
+          </option>
+        </select>
+        <select id="to-currency-select" formControlName="toSelect">
+          <option *ngFor="let currency of currencies" value="{{ currency }}">
+            {{ currency }}
+          </option>
+        </select>
+      </div>
+      <button id="convert-button" (click)="submit(form.value)">Convert</button>
+      <p *ngIf="result" id="result">{{ result }}</p>
+    </form>
+  </div>
+</body>
