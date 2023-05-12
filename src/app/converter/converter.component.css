@@ -67,6 +67,9 @@ button {
   color: #ffffff;
   font-weight: 600;
 }
+button:hover{
+  cursor: pointer;
+}
 #result {
   font-size: 1.2em;
   text-align: center;
